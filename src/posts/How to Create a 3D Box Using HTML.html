@@ -1,0 +1,92 @@
+
+    <post>
+        <p>I know what you want: </p>
+    </post>
+
+    <style>
+        .cube {
+            transform-style: preserve-3d;
+            width: 400px;
+            height: 400px;
+            animation: spin 4s linear infinite;
+            ;
+        }
+
+        @-moz-keyframes spin {
+            0% {
+                -moz-transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg);
+            }
+
+            100% {
+                -moz-transform: rotateZ(360deg) rotateX(360deg) rotateY(360deg);
+            }
+        }
+
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotateZ(360deg) rotateX(360deg) rotateY(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                -webkit-transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg);
+                transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotateZ(360deg) rotateX(360deg) rotateY(360deg);
+                transform: rotateZ(360deg) rotateX(360deg) rotateY(360deg);
+            }
+        }
+
+        .cube__face {
+            position: absolute;
+            color: white;
+            text-align: center;
+            background: rgba(10, 100, 200, 0.5);
+            border-color: rgb(0, 0, 0);
+            border-width: 1px;
+            border-style: solid;
+            top: 25%;
+            left: 25%;
+            width: 200px;
+            height: 200px;
+        }
+
+        #front {
+            transform: translateZ(100px);
+        }
+
+        #right {
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+
+        #left {
+            transform: rotateY(90deg) translateZ(100px);
+        }
+
+        #back {
+            transform: rotateY(180deg) translateZ(100px);
+        }
+
+        #top {
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+
+        #bottom {
+            transform: rotateX(90deg) translateZ(100px);
+        }
+    </style>
+    <div class="cube">
+        <div class="cube__face" id="front"></div>
+        <div class="cube__face" id="right"></div>
+        <div class="cube__face" id="back"></div>
+        <div class="cube__face" id="left"></div>
+        <div class="cube__face" id="top"></div>
+        <div class="cube__face" id="bottom"></div>
+    </div>
