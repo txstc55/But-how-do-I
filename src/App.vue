@@ -6,6 +6,6 @@
 
 <style>
 html{
-  background-color: rgb(20 23 36 );
+  background-color: rgb(10 12 18 );
 }
 </style>
