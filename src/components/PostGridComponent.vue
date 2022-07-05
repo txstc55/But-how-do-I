@@ -8,10 +8,12 @@
       shadow-md
       border-white
       mb-5
-      bg-neutral-800
+      bg-slate-900/20
     "
   >
-    <div class="text-white text-5xl break-words px-5 py-7">{{ title }}</div>
+    <div class="text-white text-5xl break-words px-5 py-7 font-mono">
+      <router-link :to="'/post/' + title">{{ title }}</router-link>
+    </div>
     <TagComponent :tags="tags"></TagComponent>
   </div>
 </template>
