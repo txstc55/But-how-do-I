@@ -16,7 +16,7 @@
     <div
       class="
         border-2
-        rounded-lg
+        rounded-md
         px-3
         py-1
         mx-2

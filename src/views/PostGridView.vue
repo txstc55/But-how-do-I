@@ -11,7 +11,10 @@
         shadow-lg
         inline-block
         mb-2
-        text-lg
+        sm:text-xs
+        md:text-sm
+        lg:text-lg
+        xl:text-lg
         hover:bg-white hover:text-black hover:-translate-y-1 hover:shadow-2xl
         transition
         duration-300
