@@ -11,7 +11,7 @@
       transition
       hover:-translate-y-1
       border-gray-900 border-2
-      rounded-sm
+      rounded-lg
       hover:bg-slate-700/20
       duration-200
       hover:border-gray-900/30
