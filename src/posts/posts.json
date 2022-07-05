@@ -1,10 +1,20 @@
 [
     {
         "title": "How do I Print to Console with Color in c++",
-        "tags": ["c++", "c", "ncurses", "command line"]
+        "tags": [
+            "c++",
+            "c",
+            "ncurses",
+            "command line"
+        ],
+        "id": 0
     },
     {
         "title": "How do I Access History in Zsh",
-        "tags": ["zsh", "command line"]
+        "tags": [
+            "zsh",
+            "command line"
+        ],
+        "id": 1
     }
 ]

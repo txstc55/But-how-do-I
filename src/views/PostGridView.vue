@@ -21,7 +21,12 @@ export default {
     };
   },
   created() {
-    this.posts = postJson.reverse();
+    if (this.posts.length == 0) {
+      this.posts = postJson.sort(function (a, b) {
+        return a.id - b.id;
+      });
+      this.posts = this.posts.reverse();
+    }
   },
 };
 </script>
