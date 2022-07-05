@@ -132,6 +132,10 @@
     color: #ACF2E4;
 }
 
+.hljs {
+    overflow-x: scroll
+}
+
 .no-select {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -141,6 +145,11 @@
     user-select: none;
 }
 
+pre code {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
 postParagraph {
     color: rgb(255 255 255);
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
@@ -148,13 +157,5 @@ postParagraph {
     font-size: 1.25rem
         /* 20px */
     ;
-    line-height: 1.75rem
-        /* 28px */
-    ;
-    padding-top: 0.75rem
-        /* 12px */
-    ;
-    padding-bottom: 0.75rem
-        /* 12px */
-    ;
+    line-height: 1.5rem;
 }

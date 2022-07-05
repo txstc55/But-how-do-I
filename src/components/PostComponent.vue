@@ -1,13 +1,21 @@
 <template>
-  <div class="text-5xl text-white text-center pb-5">{{title}}</div>
-  <div v-html="rawHtmlText"></div>
+  <div class="w-4/5 sm:w-4/5 md:w-4/5 lg:w-3/5 xl:w-1/2 relative mx-auto">
+    <div class="text-5xl text-white text-center pb-5">{{ title }}</div>
+    <div v-html="rawHtmlText"></div>
+    <TagComponent :tags="tags"></TagComponent>
+  </div>
 </template>
 
 <script>
+import TagComponent from "@/components/TagComponent.vue";
 export default {
   name: "PostComponent",
   props: {
     title: String,
+    tags: Array,
+  },
+  components: {
+    TagComponent,
   },
   data() {
     return {
@@ -27,7 +35,6 @@ export default {
       let me = this;
       xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-          console.log("Here");
           console.log(xmlhttp.responseText);
           me.rawHtmlText = xmlhttp.responseText;
           return xmlhttp.responseText;
