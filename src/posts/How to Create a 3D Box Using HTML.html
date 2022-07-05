@@ -11,13 +11,15 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"cube__face"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"bottom"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span></code></pre>
 <p>CSS: </p>
-<pre><code class="hljs" style="border-radius:8px"><span class="hljs-selector-class">.cube</span> {
+<pre><code class="hljs" style="border-radius:8px">&lt;<span class="hljs-selector-tag">style</span>&gt;
+<span class="hljs-selector-class">.cube</span> {
+  <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">100px</span>;
   <span class="hljs-attribute">transform-style</span>: preserve-<span class="hljs-number">3</span>d;
-  <span class="hljs-attribute">width</span>: <span class="hljs-number">400px</span>;
-  <span class="hljs-attribute">height</span>: <span class="hljs-number">400px</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;
   <span class="hljs-attribute">animation</span>: spin <span class="hljs-number">4s</span> linear infinite;;
 }
-  
+
 <span class="hljs-keyword">@-moz-keyframes</span> spin { 
   0% { <span class="hljs-attribute">-moz-transform</span>: <span class="hljs-built_in">rotateZ</span>(<span class="hljs-number">0deg</span>) <span class="hljs-built_in">rotateX</span>(<span class="hljs-number">0deg</span>) <span class="hljs-built_in">rotateY</span>(<span class="hljs-number">0deg</span>); } 
   100% { <span class="hljs-attribute">-moz-transform</span>: <span class="hljs-built_in">rotateZ</span>(<span class="hljs-number">360deg</span>) <span class="hljs-built_in">rotateX</span>(<span class="hljs-number">360deg</span>) <span class="hljs-built_in">rotateY</span>(<span class="hljs-number">360deg</span>); } 
@@ -36,7 +38,7 @@
     <span class="hljs-attribute">transform</span>:<span class="hljs-built_in">rotateZ</span>(<span class="hljs-number">360deg</span>) <span class="hljs-built_in">rotateX</span>(<span class="hljs-number">360deg</span>) <span class="hljs-built_in">rotateY</span>(<span class="hljs-number">360deg</span>); 
   } 
 }
-  
+
 <span class="hljs-selector-class">.cube__face</span> {
   <span class="hljs-attribute">position</span>: absolute;
   <span class="hljs-attribute">color</span>: white;
@@ -45,8 +47,6 @@
   <span class="hljs-attribute">border-color</span>: <span class="hljs-built_in">rgb</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
   <span class="hljs-attribute">border-width</span>: <span class="hljs-number">1px</span>;
   <span class="hljs-attribute">border-style</span>: solid;
-  <span class="hljs-attribute">top</span>: <span class="hljs-number">25%</span>;
-  <span class="hljs-attribute">left</span>: <span class="hljs-number">25%</span>;
   <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;
   <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;
 }
@@ -77,92 +77,76 @@
 <p>Javascript? Not needed!</p>
 <p>Result: </p>
 </post>
+<style>
+.cube {
+  margin-top: 100px;
+  transform-style: preserve-3d;
+  width: 200px;
+  height: 200px;
+  animation: spin 4s linear infinite;;
+}
 
-    <style>
-        .cube {
-            transform-style: preserve-3d;
-            width: 400px;
-            height: 400px;
-            animation: spin 4s linear infinite;
-            margin-left: auto;
-            margin-right: auto;
-        }
+@-moz-keyframes spin { 
+  0% { -moz-transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg); } 
+  100% { -moz-transform: rotateZ(360deg) rotateX(360deg) rotateY(360deg); } 
+}
+@-webkit-keyframes spin { 
+  0% { -webkit-transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg); } 
+  100% { -webkit-transform: rotateZ(360deg) rotateX(360deg) rotateY(360deg); } 
+}
+@keyframes spin { 
+  0%{
+    -webkit-transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg); 
+    transform:rotateZ(0deg) rotateX(0deg) rotateY(0deg); 
+    }
+  100% { 
+    -webkit-transform: rotateZ(360deg) rotateX(360deg) rotateY(360deg); 
+    transform:rotateZ(360deg) rotateX(360deg) rotateY(360deg); 
+  } 
+}
 
-        @-moz-keyframes spin {
-            0% {
-                -moz-transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg);
-            }
+.cube__face {
+  position: absolute;
+  color: white;
+  text-align: center;
+  background: rgba(10, 100, 200, 0.5);
+  border-color: rgb(0, 0, 0);
+  border-width: 1px;
+  border-style: solid;
+  width: 200px;
+  height: 200px;
+}
 
-            100% {
-                -moz-transform: rotateZ(360deg) rotateX(360deg) rotateY(360deg);
-            }
-        }
+#front{
+  transform: translateZ(100px);
+}
 
-        @-webkit-keyframes spin {
-            0% {
-                -webkit-transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg);
-            }
+#right{
+  transform: rotateY(-90deg) translateZ(100px);
+}
 
-            100% {
-                -webkit-transform: rotateZ(360deg) rotateX(360deg) rotateY(360deg);
-            }
-        }
+#left{
+  transform: rotateY(90deg) translateZ(100px);
+}
 
-        @keyframes spin {
-            0% {
-                -webkit-transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg);
-                transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg);
-            }
+#back{
+  transform: rotateY(180deg) translateZ(100px);
+}
 
-            100% {
-                -webkit-transform: rotateZ(360deg) rotateX(360deg) rotateY(360deg);
-                transform: rotateZ(360deg) rotateX(360deg) rotateY(360deg);
-            }
-        }
+#top{
+  transform: rotateX(-90deg) translateZ(100px);
+}
 
-        .cube__face {
-            position: absolute;
-            color: white;
-            text-align: center;
-            background: rgba(10, 100, 200, 0.5);
-            border-color: rgb(0, 0, 0);
-            border-width: 1px;
-            border-style: solid;
-            top: 25%;
-            left: 25%;
-            width: 200px;
-            height: 200px;
-        }
+#bottom{
+  transform: rotateX(90deg) translateZ(100px);
+}
 
-        #front {
-            transform: translateZ(100px);
-        }
-
-        #right {
-            transform: rotateY(-90deg) translateZ(100px);
-        }
-
-        #left {
-            transform: rotateY(90deg) translateZ(100px);
-        }
-
-        #back {
-            transform: rotateY(180deg) translateZ(100px);
-        }
-
-        #top {
-            transform: rotateX(-90deg) translateZ(100px);
-        }
-
-        #bottom {
-            transform: rotateX(90deg) translateZ(100px);
-        }
-    </style>
-    <div class="cube">
-        <div class="cube__face" id="front"></div>
-        <div class="cube__face" id="right"></div>
-        <div class="cube__face" id="back"></div>
-        <div class="cube__face" id="left"></div>
-        <div class="cube__face" id="top"></div>
-        <div class="cube__face" id="bottom"></div>
-    </div>
+</style>
+<div class="cube">
+  <div class="cube__face" id="front"></div>
+  <div class="cube__face" id="right"></div>
+  <div class="cube__face" id="back"></div>
+  <div class="cube__face" id="left"></div>
+  <div class="cube__face" id="top"></div>
+  <div class="cube__face" id="bottom"></div>
+</div>
