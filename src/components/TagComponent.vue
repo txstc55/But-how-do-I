@@ -3,7 +3,7 @@
     class="
       py-6
       px-3
-      text-white text-xs
+      text-xs
       sm:text-xs
       md:text-sm
       lg:text-lg
@@ -14,7 +14,7 @@
     "
   >
     <div
-      class="border-2 border-white rounded-lg px-2 py-1 mx-2 float-left"
+      class="border-2 rounded-lg px-2 py-1 mx-2 float-left text-white"
       v-for="tag in tags"
       :key="tag"
     >
@@ -40,3 +40,6 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+</style>

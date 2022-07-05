@@ -1,12 +1,12 @@
 <template>
-  <div class="h-screen font-mono no-select">
-    <div class="text-white h-1/2 relative">
+  <div class="h-screen font-mono no-select titleText">
+    <div class="h-1/2 relative ">
       <div class="absolute bottom-0 text-2xl pl-8 pb-5">I have a CS degree</div>
     </div>
-    <div class="h-1/2 text-white relative">
+    <div class="h-1/2 relative">
       <div
         class="
-          text-5xl text-white
+          text-5xl
           m-auto
           pl-5
           absolute
@@ -43,3 +43,8 @@ export default {
 };
 </script>
 
+<style scoped>
+.titleText {
+  color: #cf8944;
+}
+</style>
