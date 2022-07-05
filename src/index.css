@@ -139,8 +139,6 @@
 }
 
 pre code {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
     background-color: #11131f;
 }
 
@@ -152,6 +150,8 @@ post p {
         /* 20px */
     ;
     line-height: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 post li {
@@ -161,5 +161,22 @@ post li {
     font-size: 1.25rem
         /* 20px */
     ;
-    line-height: 1.5rem;
+    line-height: 1.2rem;
+    margin-bottom: 0.4rem;
+}
+
+post li::before {
+    padding-left: 15px;
+    content: " - "
+}
+
+post ul {
+    line-height: 1.2rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+post p a {
+    text-decoration-line: underline;
+    font-style: italic;
 }
