@@ -42,7 +42,7 @@ export default {
   created() {
     this.httpGet(
       "https://raw.githubusercontent.com/txstc55/But-how-do-I/main/src/posts/" +
-        this.$props.title +
+        this.$props.title.replace(/\s/g, "%20") +
         ".html"
     );
   },

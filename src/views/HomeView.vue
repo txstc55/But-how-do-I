@@ -1,7 +1,7 @@
 <template>
   <div>
     <TitleComponent />
-    <PostComponent title="test1" />
+    <PostComponent title="How to Print to Console With Color" />
   </div>
 </template>
 
