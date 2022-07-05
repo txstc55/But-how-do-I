@@ -17,7 +17,7 @@
           no-select
         "
       >
-        CHECK OUT MY CODE SNIPPET COLLECTION
+        CODES I FOUND USEFUL
       </div>
       <PostGridView></PostGridView>
     </div>
