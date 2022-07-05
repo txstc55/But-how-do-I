@@ -1,6 +1,80 @@
 
     <post>
         <p>I know what you want: </p>
+        <p>HTML: </p>
+        <pre><code class="hljs" style="background:#000000;border-radius:8px"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"cube"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"cube__face"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"front"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"cube__face"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"right"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"cube__face"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"back"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"cube__face"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"left"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"cube__face"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"top"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"cube__face"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"bottom"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span></code></pre>
+        <p>CSS: </p>
+        <pre><code class="hljs" style="background:#000000;border-radius:8px"><span class="hljs-selector-class">.cube</span> {
+            <span class="hljs-attribute">transform-style</span>: preserve-<span class="hljs-number">3</span>d;
+            <span class="hljs-attribute">width</span>: <span class="hljs-number">400px</span>;
+            <span class="hljs-attribute">height</span>: <span class="hljs-number">400px</span>;
+            <span class="hljs-attribute">animation</span>: spin <span class="hljs-number">4s</span> linear infinite;;
+          }
+          
+          <span class="hljs-keyword">@-moz-keyframes</span> spin { 
+            0% { <span class="hljs-attribute">-moz-transform</span>: <span class="hljs-built_in">rotateZ</span>(<span class="hljs-number">0deg</span>) <span class="hljs-built_in">rotateX</span>(<span class="hljs-number">0deg</span>) <span class="hljs-built_in">rotateY</span>(<span class="hljs-number">0deg</span>); } 
+            100% { <span class="hljs-attribute">-moz-transform</span>: <span class="hljs-built_in">rotateZ</span>(<span class="hljs-number">360deg</span>) <span class="hljs-built_in">rotateX</span>(<span class="hljs-number">360deg</span>) <span class="hljs-built_in">rotateY</span>(<span class="hljs-number">360deg</span>); } 
+          }
+          <span class="hljs-keyword">@-webkit-keyframes</span> spin { 
+            0% { <span class="hljs-attribute">-webkit-transform</span>: <span class="hljs-built_in">rotateZ</span>(<span class="hljs-number">0deg</span>) <span class="hljs-built_in">rotateX</span>(<span class="hljs-number">0deg</span>) <span class="hljs-built_in">rotateY</span>(<span class="hljs-number">0deg</span>); } 
+            100% { <span class="hljs-attribute">-webkit-transform</span>: <span class="hljs-built_in">rotateZ</span>(<span class="hljs-number">360deg</span>) <span class="hljs-built_in">rotateX</span>(<span class="hljs-number">360deg</span>) <span class="hljs-built_in">rotateY</span>(<span class="hljs-number">360deg</span>); } 
+          }
+          <span class="hljs-keyword">@keyframes</span> spin { 
+            0%{
+              <span class="hljs-attribute">-webkit-transform</span>: <span class="hljs-built_in">rotateZ</span>(<span class="hljs-number">0deg</span>) <span class="hljs-built_in">rotateX</span>(<span class="hljs-number">0deg</span>) <span class="hljs-built_in">rotateY</span>(<span class="hljs-number">0deg</span>); 
+              <span class="hljs-attribute">transform</span>:<span class="hljs-built_in">rotateZ</span>(<span class="hljs-number">0deg</span>) <span class="hljs-built_in">rotateX</span>(<span class="hljs-number">0deg</span>) <span class="hljs-built_in">rotateY</span>(<span class="hljs-number">0deg</span>); 
+              }
+            100% { 
+              <span class="hljs-attribute">-webkit-transform</span>: <span class="hljs-built_in">rotateZ</span>(<span class="hljs-number">360deg</span>) <span class="hljs-built_in">rotateX</span>(<span class="hljs-number">360deg</span>) <span class="hljs-built_in">rotateY</span>(<span class="hljs-number">360deg</span>); 
+              <span class="hljs-attribute">transform</span>:<span class="hljs-built_in">rotateZ</span>(<span class="hljs-number">360deg</span>) <span class="hljs-built_in">rotateX</span>(<span class="hljs-number">360deg</span>) <span class="hljs-built_in">rotateY</span>(<span class="hljs-number">360deg</span>); 
+            } 
+          }
+          
+          <span class="hljs-selector-class">.cube__face</span> {
+            <span class="hljs-attribute">position</span>: absolute;
+            <span class="hljs-attribute">color</span>: white;
+            <span class="hljs-attribute">text-align</span>: center;
+            <span class="hljs-attribute">background</span>: <span class="hljs-built_in">rgba</span>(<span class="hljs-number">10</span>, <span class="hljs-number">100</span>, <span class="hljs-number">200</span>, <span class="hljs-number">0.5</span>);
+            <span class="hljs-attribute">border-color</span>: <span class="hljs-built_in">rgb</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+            <span class="hljs-attribute">border-width</span>: <span class="hljs-number">1px</span>;
+            <span class="hljs-attribute">border-style</span>: solid;
+            <span class="hljs-attribute">top</span>: <span class="hljs-number">25%</span>;
+            <span class="hljs-attribute">left</span>: <span class="hljs-number">25%</span>;
+            <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;
+            <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;
+          }
+          
+          <span class="hljs-selector-id">#front</span>{
+            <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateZ</span>(<span class="hljs-number">100px</span>);
+          }
+          
+          <span class="hljs-selector-id">#right</span>{
+            <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotateY</span>(-<span class="hljs-number">90deg</span>) <span class="hljs-built_in">translateZ</span>(<span class="hljs-number">100px</span>);
+          }
+          
+          <span class="hljs-selector-id">#left</span>{
+            <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotateY</span>(<span class="hljs-number">90deg</span>) <span class="hljs-built_in">translateZ</span>(<span class="hljs-number">100px</span>);
+          }
+          
+          <span class="hljs-selector-id">#back</span>{
+            <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotateY</span>(<span class="hljs-number">180deg</span>) <span class="hljs-built_in">translateZ</span>(<span class="hljs-number">100px</span>);
+          }
+          
+          <span class="hljs-selector-id">#top</span>{
+            <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotateX</span>(-<span class="hljs-number">90deg</span>) <span class="hljs-built_in">translateZ</span>(<span class="hljs-number">100px</span>);
+          }
+          
+          <span class="hljs-selector-id">#bottom</span>{
+            <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotateX</span>(<span class="hljs-number">90deg</span>) <span class="hljs-built_in">translateZ</span>(<span class="hljs-number">100px</span>);
+          }</code></pre>
+        <p>Result: </p>
     </post>
 
     <style>
