@@ -11,6 +11,7 @@
         shadow-lg
         inline-block
         mb-2
+        text-xs
         sm:text-xs
         md:text-sm
         lg:text-lg
