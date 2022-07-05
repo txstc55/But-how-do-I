@@ -7,4 +7,12 @@ explain why you would need it.</p>
 <li>Running some code you made in command line.</li>
 <li>Directly running code from browser.</li>
 </ul>
+<p>But now here's the problem. If you send a request from browser, it might not get through, but sending the same request from, let's say, postman, the post will get through and return the desired result. Why?</p>
+<p>Well it's because some services actually blocks the request if it was sent by a browser, and that's quite easy, since the header contains the information of the agent that sent the request.</p>
+<p>So only if there's a way to have a proxy that takes our request, convert it, then send the request, and gives us back the corresponding result...</p>
+<p>And this is where CORS comes in. You can read the detailed description <a href="https://github.com/Rob--W/cors-anywhere">here</a>, but essentially, it is a reverse proxy that solves the exact problem I described before.</p>
+<p>Now, the link provided above is a repo that you can easily use to establish your own CORS server. Additionally, this code can be easily deployed to Heroku. Do notice that, you will want to add a whitelist and a blacklist so that it doesn't get spammed.</p>
+<p>Now, about how to send request to CORS server, that will be another topic. But, in most cases, you won't be needing it. I used it to get google translate service for free.</p>
+<p>Another thing is that: you would think: because we are sending request to a proxy server, this server might get blocked by the service you are sending to. That is not the case. CORS Anywhere will actually take the ip address we send in header, and pretend that this request is still from that IP address, just not from browser.</p>
+<p>And that's all, good luck using CORS Anywhere.</p>
 </post>
