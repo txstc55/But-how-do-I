@@ -16,5 +16,13 @@
             "command line"
         ],
         "id": 1
+    },
+    {
+        "title": "How Do I Execute a Function After a Command in Zsh",
+        "tags": [
+            "zsh",
+            "command line"
+        ],
+        "id": 2
     }
 ]
