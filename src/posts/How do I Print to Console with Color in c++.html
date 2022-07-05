@@ -1,9 +1,9 @@
 <postParagraph>If you want to add color to your output in console, you will need to use ncurses. In c++, it's as
 easy as an include:</postParagraph>
-<pre><code class="hljs" style="background:#292A30;border-radius:8px"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;ncurses.h&gt;</span></span></code></pre>
+<pre><code class="hljs" style="border-radius:8px"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;ncurses.h&gt;</span></span></code></pre>
 <postParagraph>Now you will need to define a color and initialize it as an attribute. You can do it using the
 following code:</postParagraph>
-<pre><code class="hljs" style="background:#292A30;border-radius:8px"><span class="hljs-comment">// the first argument is an attribute number</span>
+<pre><code class="hljs" style="border-radius:8px"><span class="hljs-comment">// the first argument is an attribute number</span>
 <span class="hljs-comment">// the next three are rgb values</span>
 init_color(<span class="hljs-number">21</span>, <span class="hljs-number">0</span>, <span class="hljs-number">100</span>, <span class="hljs-number">50</span>);
 
@@ -16,7 +16,7 @@ init_pair(<span class="hljs-number">21</span>, <span class="hljs-number">21</spa
 <postParagraph>Now that we initialized the color, the last thing is to actually use it before printing.
 </postParagraph>
 <postParagraph>To achieve this, we will need to turn on the attribute, before the printing:</postParagraph>
-<pre><code class="hljs" style="background:#292A30;border-radius:8px"><span class="hljs-comment">// turn on the attribute 21</span>
+<pre><code class="hljs" style="border-radius:8px"><span class="hljs-comment">// turn on the attribute 21</span>
 <span class="hljs-comment">// which is the color we defined</span>
 attron(<span class="hljs-number">21</span>);
 

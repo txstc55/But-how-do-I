@@ -1,8 +1,7 @@
 <template>
-  <div class="w-4/5 sm:w-4/5 md:w-4/5 lg:w-3/5 xl:w-1/2 relative mx-auto">
-    <div class="text-5xl text-white text-center pb-5 pt-20">{{ title }}</div>
-    <div v-html="rawHtmlText"></div>
-    <TagComponent :tags="tags"></TagComponent>
+  <div class="w-4/5 sm:w-4/5 md:w-4/5 lg:w-3/5 xl:w-1/2 relative mx-auto pt-20">
+    <div class="text-5xl text-white text-center pb-5 px-2">{{ title }}</div>
+    <div class="px-2" v-html="rawHtmlText"></div>
   </div>
 </template>
 
@@ -12,7 +11,6 @@ export default {
   name: "PostComponent",
   props: {
     title: String,
-    tags: Array,
   },
   components: {
     TagComponent,
@@ -49,12 +47,12 @@ export default {
   created() {
     console.log(
       "https://raw.githubusercontent.com/txstc55/But-how-do-I/main/src/posts/" +
-        this.$props.title.replace(/\s/g, "%20") +
+        encodeURIComponent(this.$props.title) +
         ".html"
     );
     this.httpGet(
       "https://raw.githubusercontent.com/txstc55/But-how-do-I/main/src/posts/" +
-        this.$props.title.replace(/\s/g, "%20") +
+        encodeURIComponent(this.$props.title) +
         ".html"
     );
   },

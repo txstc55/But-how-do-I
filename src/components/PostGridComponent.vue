@@ -5,13 +5,13 @@
       mx-auto
       border-2
       rounded-md
-      shadow-md
       border-white
       mb-5
       bg-slate-900/20
+      hover:shadow-lg animate-all transition hover:-translate-y-1
     "
   >
-    <div class="text-white text-5xl break-words px-5 py-7 font-mono">
+    <div class="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl break-words px-5 py-7 font-mono">
       <router-link :to="'/post/' + title">{{ title }}</router-link>
     </div>
     <TagComponent :tags="tags"></TagComponent>
