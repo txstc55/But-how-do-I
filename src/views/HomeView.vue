@@ -1,7 +1,7 @@
 <template>
   <div>
     <TitleComponent />
-    <div class="board">
+    <div class="board min-h-screen">
       <div
         class="
           text-2xl
@@ -14,12 +14,14 @@
           lg:text-5xl
           xl:text-6xl
           text-white
+          no-select
         "
       >
         CHECK OUT MY CODE SNIPPET COLLECTION
       </div>
       <PostGridView></PostGridView>
     </div>
+    <div class="mt-10 mb-2 text-gray-400 w-full text-center">A collection of code snippets by <a href="https://txstc55.github.io/" class="underline italic">Xuan Tang</a> from his side projects</div>
   </div>
 </template>
 

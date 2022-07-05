@@ -14,7 +14,7 @@
       font-mono
       text-lg
       py-2
-      px-6
+      px-5
        hover:bg-gray-900 transform duration-500 hover:shadow-xl hover:scale-105 hover:border-white
     "
   >

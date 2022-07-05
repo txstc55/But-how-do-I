@@ -7,14 +7,23 @@
       sm:text-xs
       md:text-sm
       lg:text-lg
-      xl:text-xl
+      xl:text-lg
       no-select
       font-mono
       overflow-hidden
     "
   >
     <div
-      class="border-2 rounded-lg px-2 py-1 mx-2 float-left text-white"
+      class="
+        border-2
+        rounded-lg
+        px-3
+        py-1
+        mx-2
+        float-left
+        text-white
+        shadow-2xl
+      "
       v-for="tag in tags"
       :key="tag"
     >
