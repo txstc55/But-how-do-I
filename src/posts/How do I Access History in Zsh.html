@@ -1,5 +1,0 @@
-<postParagraph>So you probably use Z shell by now, since it's now apple's default configuration, and you may also have installed oh-my-zsh. Now you are here because you want to develop a plugin for oh-my-zsh.</postParagraph>
-<postParagraph>Basically, most of the oh-my-zsh plugin deal with your command history, which you can easily access by: </postParagraph>
-<pre><code class="hljs" style="border-radius:8px">HIS=<span class="hljs-string">"$(tail -n 1 $HOME/.zsh_history)"</span>;</code></pre>
-<postParagraph>But just running this command will give you an annoying output as it includes a timestamp. You can then clean up the history by: </postParagraph>
-<pre><code class="hljs" style="border-radius:8px">HISL=<span class="hljs-string">"$(cut -d"</span>;<span class="hljs-string">" -f2 &lt;&lt;&lt;$HIS)"</span>;</code></pre>
