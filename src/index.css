@@ -151,4 +151,10 @@ postParagraph {
     line-height: 1.75rem
         /* 28px */
     ;
+    padding-top: 0.75rem
+        /* 12px */
+    ;
+    padding-bottom: 0.75rem
+        /* 12px */
+    ;
 }

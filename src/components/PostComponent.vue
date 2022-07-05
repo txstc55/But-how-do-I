@@ -1,4 +1,5 @@
 <template>
+  <div class="text-5xl text-white text-center pb-5">{{title}}</div>
   <div v-html="rawHtmlText"></div>
 </template>
 
