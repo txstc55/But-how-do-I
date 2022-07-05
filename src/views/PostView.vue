@@ -9,12 +9,13 @@
       -translate-x-1/2
       border-2
       rounded-lg
-      border-white
+      border-white/50
       text-white
       font-mono
       text-lg
       py-2
-      px-4
+      px-6
+       hover:bg-gray-900 transform duration-500 hover:shadow-xl hover:scale-105 hover:border-white
     "
   >
     HOME

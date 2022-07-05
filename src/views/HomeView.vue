@@ -43,7 +43,7 @@ export default {
 
 <style scoped>
 .board {
-  padding-top:50px;
+  padding-top: 50px;
   padding-bottom: 50px;
 }
 </style>
