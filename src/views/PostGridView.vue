@@ -52,6 +52,23 @@
         {{ tag.name + "  " + tag.count }}
       </button>
     </div>
+    <div
+      v-if="postsSelected.length == 0"
+      class="
+        text-white
+        sm:text-3xl
+        md:text-4xl
+        lg:text-5xl
+        xl:text-6xl
+        no-select
+        text-center
+        my-auto
+        pt-20
+        font-mono
+      "
+    >
+      NO POSTS FOUND
+    </div>
     <PostGridComponent
       v-for="post in postsSelected.slice(
         (page - 1) * 5,
