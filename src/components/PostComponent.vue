@@ -1,6 +1,8 @@
 <template>
   <div class="w-4/5 sm:w-4/5 md:w-4/5 lg:w-3/5 xl:w-1/2 relative mx-auto py-20">
-    <div class="text-5xl text-white text-center pb-10 px-2 font-mono">{{ title }}</div>
+    <div class="text-5xl text-white text-center pb-10 px-2 font-mono">
+      {{ title }}
+    </div>
     <div class="px-2" v-html="rawHtmlText"></div>
   </div>
 </template>
@@ -34,6 +36,10 @@ export default {
       xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
           me.rawHtmlText = xmlhttp.responseText;
+          setTimeout(() => {
+            // scroll to top when animation is finished
+            window.scrollTo(0, 0);
+          }, 501);
           return xmlhttp.responseText;
         } else {
           return null;

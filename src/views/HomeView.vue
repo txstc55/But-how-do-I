@@ -20,9 +20,15 @@
         CODES I FOUND USEFUL
       </div>
       <PostGridView></PostGridView>
-      
     </div>
-    <div class="mt-10 mb-2 text-gray-400 w-full text-center">A collection of code snippets by <a href="https://txstc55.github.io/" class="underline italic">Xuan Tang</a> from his side projects<br>Suggestions? Email me: txstc55[at]gmail[dot]com</div>
+    <div class="mt-10 mb-2 text-gray-400 w-full text-center">
+      A collection of code snippets by
+      <a href="https://txstc55.github.io/" class="underline italic"
+        >Xuan Tang</a
+      >
+      from his side projects<br />Suggestions? Email me:
+      txstc55[at]gmail[dot]com
+    </div>
   </div>
 </template>
 
@@ -40,7 +46,12 @@ export default {
   data() {
     return {};
   },
-  created() {},
+  created() {
+    setTimeout(() => {
+      // scroll to top when animation is finished
+      window.scrollTo(0, 0);
+    }, 10);
+  },
 };
 </script>
 
