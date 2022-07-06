@@ -1,46 +1,112 @@
 <template>
-  <div class="items-center mb-8 text-center">
-    <button
+  <div class="board min-h-screen relative">
+    <div
       class="
-        border-2
-        rounded-lg
-        px-2
-        py-1
-        mx-2
-        w-fit
-        shadow-lg
-        inline-block
-        mb-2
-        text-xs
-        sm:text-xs
-        md:text-sm
-        lg:text-lg
-        xl:text-lg
-        hover:bg-white hover:text-black hover:-translate-y-1 hover:shadow-2xl
-        transition
-        duration-300
-        whitespace-pre
-      "
-      v-for="tag in tagsSorted"
-      :key="tag.name"
-      @click="selectTag(tag.name)"
-      :class="
-        tagsSelected.indexOf(tag.name) != -1
-          ? 'text-white border-white'
-          : 'text-gray-400 border-gray-500'
+        text-2xl
+        font-mono
+        my-14
+        mx-auto
+        text-center
+        sm:text-3xl
+        md:text-4xl
+        lg:text-5xl
+        xl:text-6xl
+        text-white
+        no-select
       "
     >
-      {{ tag.name + "   " + tag.count }}
-    </button>
-  </div>
-  <transition-group name="list" tag="ul">
+      CODES I FOUND USEFUL
+    </div>
+    <div class="items-center mb-8 text-center">
+      <button
+        class="
+          border-2
+          rounded-lg
+          px-2
+          py-1
+          mx-2
+          w-fit
+          shadow-lg
+          inline-block
+          mb-2
+          text-xs
+          sm:text-xs
+          md:text-sm
+          lg:text-lg
+          xl:text-lg
+          hover:bg-white hover:text-black hover:-translate-y-1 hover:shadow-2xl
+          transition
+          duration-300
+          whitespace-pre
+          font-mono
+        "
+        v-for="tag in tagsSorted"
+        :key="tag.name"
+        @click="selectTag(tag.name)"
+        :class="
+          tagsSelected.indexOf(tag.name) != -1
+            ? 'text-white border-white'
+            : 'text-gray-400 border-gray-500'
+        "
+      >
+        {{ tag.name + "  " + tag.count }}
+      </button>
+    </div>
     <PostGridComponent
-      v-for="post in postsSelected"
+      v-for="post in postsSelected.slice(
+        (page - 1) * 5,
+        Math.min(postsSelected.length, page * 5)
+      )"
       :key="post.id"
       :title="post.title"
       :tags="post.tags"
-    ></PostGridComponent
-  ></transition-group>
+    ></PostGridComponent>
+    <div
+      class="
+        items-center
+        mb-1
+        mt-10
+        text-center
+        bottom-1
+        absolute
+        left-1/2
+        -translate-x-1/2
+      "
+    >
+      <button
+        class="
+          rounded-md
+          px-2
+          mx-2
+          w-fit
+          shadow-lg
+          inline-block
+          mb-2
+          text-xs
+          sm:text-xs
+          md:text-sm
+          lg:text-lg
+          xl:text-lg
+          transition
+          duration-300
+          whitespace-pre
+          bg-gray-500/20
+          font-mono
+          hover:bg-gray-200/20
+        "
+        v-for="index in Math.ceil(postsSelected.length / 5)"
+        :key="index"
+        @click="changePage(index)"
+        :class="
+          page == index
+            ? 'border-2 border-white text-white'
+            : 'border-2 border-none text-white/80'
+        "
+      >
+        {{ index }}
+      </button>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -58,9 +124,13 @@ export default {
       tagsSorted: [],
       tagsSelected: [],
       postsSelected: [],
+      page: 1,
     };
   },
   methods: {
+    changePage(index) {
+      this.page = index;
+    },
     selectTag(name) {
       var add = true;
       const index = this.tagsSelected.indexOf(name);
@@ -86,8 +156,8 @@ export default {
               if (item.tags.indexOf(me.tagsSelected[i]) == -1) {
                 return false;
               }
-              return true;
             }
+            return true;
           });
         }
       }
@@ -137,5 +207,10 @@ export default {
 .list-enter-from {
   opacity: 0;
   transform: translateX(20vw);
+}
+
+.board {
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 </style>
