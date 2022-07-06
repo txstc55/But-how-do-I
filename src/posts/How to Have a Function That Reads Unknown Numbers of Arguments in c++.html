@@ -1,0 +1,36 @@
+<post>
+<p>So we all may or may not know that when you define a function in c++, you can have the same function name that takes in different types of arguments, but how do I define a function that takes in unknown number of arguments with unknown argument type?</p>
+<p>Well it's not that hard, it's basically like a recursive function, here, let's say you have a void function called doSomething, the first thing you need is to define a function that takes in different types of arguments that are legal. For example: </p>
+<pre><code class="hljs" style="background:#000000;border-radius:8px"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">doSomething</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; v)</span> </span>{
+  <span class="hljs-comment">// do something with v as a vector</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">doSomething</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> v)</span> </span>{
+  <span class="hljs-comment">// do something with v as an int</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">doSomething</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> v)</span> </span>{
+  <span class="hljs-comment">// do something with v as an string</span>
+}</code></pre>
+<p>But that's not enough. Since the input is unknown, we might encounter the case where the input type is something undesired. Here, let's define something for that: </p>
+<pre><code class="hljs" style="background:#000000;border-radius:8px"><span class="hljs-function"><span class="hljs-keyword">template</span>&lt;class T&gt;
+<span class="hljs-keyword">void</span> <span class="hljs-title">doSomething</span><span class="hljs-params">(<span class="hljs-keyword">const</span> T&amp; v)</span> </span>{
+  <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Parameter not understood"</span> &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+  <span class="hljs-comment">// you don't have to do this next line</span>
+  <span class="hljs-built_in">exit</span>(<span class="hljs-number">1</span>);
+}</code></pre>
+<p>Ok now for the last step. We will need to define a function that actually takes in unknown number of inputs. But here's the catch: since the previous function we defined takes in only one argument each, in this new function, we will separate the first argument from the others: </p>
+<pre><code class="hljs" style="background:#000000;border-radius:8px"><span class="hljs-function"><span class="hljs-keyword">template</span>&lt;class T, class ...TArgs&gt;
+<span class="hljs-keyword">void</span> <span class="hljs-title">doSomething</span><span class="hljs-params">(<span class="hljs-keyword">const</span> T&amp; v, <span class="hljs-keyword">const</span> TArgs&amp; ... args)</span> </span>{
+  <span class="hljs-comment">// separate the first argument and call the corresponding function</span>
+  doSomething(v);
+  <span class="hljs-comment">// recursively call the function to handle the rest of the arguments</span>
+  doSomething(args);
+}</code></pre>
+<p>And we are done!</p>
+</post>
+
+template<class T>
+void doSomething(const T&) {
+  std::cout << "Parameter not understood" << std::endl;
+}

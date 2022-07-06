@@ -46,5 +46,12 @@
             "css"
         ],
         "id": 5
+    },
+    {
+        "title": "How to Have a Function That Reads Unknown Numbers of Arguments in c++",
+        "tags": [
+            "c++"
+        ],
+        "id": 6
     }
 ]
