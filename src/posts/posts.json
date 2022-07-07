@@ -4,7 +4,6 @@
         "tags": [
             "c++",
             "c",
-            "ncurses",
             "command line"
         ],
         "id": 0
@@ -35,7 +34,8 @@
     {
         "title": "How Do I Use CORS",
         "tags": [
-            "nodejs"
+            "nodejs",
+            "javascript"
         ],
         "id": 4
     },
