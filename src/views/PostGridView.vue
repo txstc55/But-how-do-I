@@ -15,9 +15,9 @@
         no-select
       "
     >
-      CODES I FOUND USEFUL
+      THINGS I FOUND USEFUL
     </div>
-    <div class="items-center mb-8 text-center">
+    <div class="items-center mb-8 text-center no-select">
       <button
         class="
           border-2
@@ -34,7 +34,15 @@
           md:text-sm
           lg:text-lg
           xl:text-lg
-          hover:bg-white hover:text-black hover:-translate-y-1 hover:shadow-2xl
+          hover:bg-white hover:text-black hover:scale-110 hover:shadow-2xl
+          active:bg-gray-900 active:text-gray-200
+          disabled:hover:border-gray-500
+          disabled:text-gray-500
+          disabled:hover:scale-100
+          disabled:transition-none
+          disabled:hover:shadow-none
+          disabled:hover:bg-inherit
+          active:scale-100 active:shadow-lg
           transition
           duration-300
           whitespace-pre
@@ -43,6 +51,7 @@
         v-for="tag in tagsSorted"
         :key="tag.name"
         @click="selectTag(tag.name)"
+        :disabled="tag.count == 0"
         :class="
           tagsSelected.indexOf(tag.name) != -1
             ? 'text-white border-white'
@@ -139,6 +148,7 @@ export default {
       posts: [],
       tagsToPosts: {},
       tagsSorted: [],
+      tagsSortedOriginal: [],
       tagsSelected: [],
       postsSelected: [],
       page: 1,
@@ -161,21 +171,64 @@ export default {
       }
       if (this.tagsSelected.length == 0) {
         this.postsSelected = this.posts;
+        for (var i = 0; i < this.tagsSorted.length; i++) {
+          this.tagsSorted[i].count = this.tagsSortedOriginal[i].count;
+        }
       } else {
+        let me = this;
         if (add) {
+          // adding a tag
+          // more restrictions
+          var decrementTag = {};
           this.postsSelected = this.postsSelected.filter((item) => {
-            return item.tags.indexOf(name) > -1;
+            const ind = item.tags.indexOf(name);
+            if (ind == -1) {
+              for (var i = 0; i < item.tags.length; i++) {
+                const tag = item.tags[i];
+                if (tag in decrementTag) {
+                  decrementTag[tag] += 1;
+                } else {
+                  decrementTag[tag] = 1;
+                }
+              }
+              return false;
+            }
+            return true;
           });
+          for (var i = 0; i < me.tagsSorted.length; i++) {
+            const tag = me.tagsSorted[i].name;
+            if (tag in decrementTag) {
+              me.tagsSorted[i].count -= decrementTag[tag];
+            }
+          }
         } else {
+          // removing a tag
           let me = this;
+          var incrementTag = {};
           this.postsSelected = this.posts.filter((item) => {
             for (var i = 0; i < me.tagsSelected.length; i++) {
               if (item.tags.indexOf(me.tagsSelected[i]) == -1) {
                 return false;
               }
             }
+            for (var i = 0; i < item.tags.length; i++) {
+              const tag = item.tags[i];
+              if (tag in incrementTag) {
+                incrementTag[tag] += 1;
+              } else {
+                incrementTag[tag] = 1;
+              }
+            }
             return true;
           });
+          for (var i = 0; i < this.tagsSorted.length; i++) {
+            const tag = this.tagsSorted[i].name;
+            if (tag in incrementTag) {
+              this.tagsSorted[i].count = incrementTag[tag];
+            } else {
+              this.tagsSorted[i].count = 0;
+            }
+          }
         }
       }
     },
@@ -204,6 +257,12 @@ export default {
     this.tagsSorted.sort(function (a, b) {
       return b.count - a.count;
     });
+    for (var i = 0; i < this.tagsSorted.length; i++) {
+      this.tagsSortedOriginal.push({
+        name: this.tagsSorted[i].name,
+        count: this.tagsSorted[i].count,
+      });
+    }
   },
 };
 </script>

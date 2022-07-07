@@ -5,16 +5,15 @@
       mx-auto
       shadow-inner
       mb-5
-      bg-slate-900/20
       hover:shadow-2xl
       animate-all
       transition
       hover:-translate-y-1
       border-gray-900 border-2
       rounded-lg
-      hover:bg-slate-700/20
       duration-200
       hover:border-gray-900/30
+      post-grid
     "
   >
     <div
@@ -30,7 +29,9 @@
         font-mono
       "
     >
-      <router-link :to="'/post/' + title">{{ title }}</router-link>
+      <router-link :to="'/post/' + title" class="no-select">{{
+        title
+      }}</router-link>
     </div>
     <TagComponent :tags="tags"></TagComponent>
   </div>
@@ -52,4 +53,13 @@ export default {
 </script>
 
 <style scoped>
+.post-grid {
+  background-color: #1a273330;
+  color: rgb(10, 12, 18);
+}
+
+.post-grid:hover {
+  background-color: #3e465e40;
+  color: rgb(10, 12, 18);
+}
 </style>

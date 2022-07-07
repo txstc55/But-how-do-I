@@ -31,7 +31,7 @@ export default {
     setTimeout(() => {
       // scroll to top when animation is finished
       window.scrollTo(0, 0);
-    }, 10);
+    }, 510);
   },
 };
 </script>
