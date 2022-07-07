@@ -60,5 +60,14 @@
             "javascript"
         ],
         "id": 7
+    },
+    {
+        "title": "How Do I Use range() Function in Languages Other Than Python",
+        "tags": [
+            "javascript",
+            "vuejs",
+            "c++"
+        ],
+        "id": 8
     }
 ]

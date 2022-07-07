@@ -1,0 +1,14 @@
+<post>
+<p>Let's cut to the chase.</p>
+<p>c++: </p>
+<pre><code class="hljs" style="border-radius:8px"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;numeric&gt; //std::iota</span></span>
+
+<span class="hljs-function"><span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">x</span><span class="hljs-params">(LENGTH_OF_VECTOR)</span></span>;
+<span class="hljs-built_in">std</span>::iota(<span class="hljs-built_in">std</span>::begin(x), <span class="hljs-built_in">std</span>::end(x), STARTING_NUMBER);</code></pre>
+<p>javascript:</p>
+<pre><code class="hljs" style="border-radius:8px"><span class="hljs-keyword">var</span> x = <span class="hljs-function">(<span class="hljs-params">lower, upper</span>) =&gt;</span> [...Array(upper - lower + <span class="hljs-number">1</span>).keys()].map(<span class="hljs-function"><span class="hljs-params">i</span> =&gt;</span> i + lower);</code></pre>
+<p>vuejs v-for:</p>
+<pre><code class="hljs" style="border-radius:8px">&lt;div v-<span class="hljs-keyword">for</span>=<span class="hljs-string">"index in RANGE"</span> :key=<span class="hljs-string">"index"</span>&gt;{{ index }}&lt;/div&gt;</code></pre>
+<p>Need more? But this is my code snippet collection. Sorry.</p>
+</post>
