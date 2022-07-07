@@ -160,6 +160,7 @@ export default {
       this.page = index;
     },
     selectTag(name) {
+      this.page = 1; // return to first page
       var add = true;
       const index = this.tagsSelected.indexOf(name);
       if (index > -1) {
