@@ -1,9 +1,9 @@
 <template>
-  <div class="h-screen font-mono no-select titleText">
-    <div class="h-1/2 relative ">
+  <div class="h-screen font-mono no-select titleText -z-10">
+    <div class="h-1/2 relative -z-10">
       <div class="absolute bottom-0 text-2xl pl-8 pb-5">I have a CS degree</div>
     </div>
-    <div class="h-1/2 relative">
+    <div class="h-1/2 relative -z-10">
       <div
         class="
           text-5xl

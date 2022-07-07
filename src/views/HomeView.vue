@@ -1,20 +1,20 @@
 <template>
   <div>
-    <div class="h-screen w-screen"></div>
+    <div class="h-screen w-screen -z-10"></div>
     <div
-      class="fixed top-0 h-screen w-screen main-title"
+      class="fixed top-0 h-screen w-screen main-title -z-10"
       :style="{ filter: 'blur(' + this.blur + 'px)', opacity: this.opacity }"
     >
       <TitleComponent />
     </div>
-    <div :style="{ height: '50vh' }"></div>
+    <div class="-z-10" :style="{ height: '50vh' }"></div>
     <PostGridView></PostGridView>
-    <div class="mt-1 mb-4 text-gray-400 w-full text-center">
+    <div class="mt-1 mb-4 text-gray-400 w-full text-center z-50">
       A collection of code snippets by
       <a
         target="_blank"
         href="https://txstc55.github.io/"
-        class="underline italic"
+        class="underline italic z-50"
         >Xuan Tang</a
       >
       from his side projects<br />Suggestions? Email me:
