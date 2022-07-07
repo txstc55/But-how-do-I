@@ -67,7 +67,7 @@
         font-mono
       "
     >
-      NO POSTS FOUND
+      NO POST FOUND
     </div>
     <PostGridComponent
       v-for="post in postsSelected.slice(
