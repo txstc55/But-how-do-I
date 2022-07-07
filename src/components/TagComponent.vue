@@ -24,7 +24,7 @@
         text-white
         shadow-2xl
       "
-      v-for="tag in tags"
+      v-for="tag in tags.sort()"
       :key="tag"
     >
       {{ tag }}
