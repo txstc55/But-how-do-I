@@ -20,6 +20,7 @@
         transform
         duration-500
         hover:shadow-xl hover:scale-105 hover:border-white
+        no-select
       "
     >
       HOME
