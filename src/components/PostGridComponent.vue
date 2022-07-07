@@ -8,7 +8,7 @@
       hover:shadow-2xl
       animate-all
       transition
-      hover:-translate-y-1
+      hover:scale-102
       border-gray-900 border-2
       rounded-lg
       duration-200

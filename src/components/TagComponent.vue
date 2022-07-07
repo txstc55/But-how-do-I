@@ -22,7 +22,6 @@
         mx-2
         float-left
         text-white
-        shadow-2xl
       "
       v-for="tag in tags.sort()"
       :key="tag"

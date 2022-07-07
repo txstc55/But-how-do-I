@@ -97,6 +97,7 @@
         absolute
         left-1/2
         -translate-x-1/2
+        no-select
       "
     >
       <button
