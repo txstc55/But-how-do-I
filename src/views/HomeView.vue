@@ -4,7 +4,7 @@
     <PostGridView></PostGridView>
     <div class="mt-1 mb-4 text-gray-400 w-full text-center">
       A collection of code snippets by
-      <a href="https://txstc55.github.io/" class="underline italic"
+      <a target="_blank" href="https://txstc55.github.io/" class="underline italic"
         >Xuan Tang</a
       >
       from his side projects<br />Suggestions? Email me:
