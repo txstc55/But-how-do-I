@@ -80,8 +80,8 @@
     </div>
     <PostGridComponent
       v-for="post in postsSelected.slice(
-        (page - 1) * 5,
-        Math.min(postsSelected.length, page * 5)
+        (page - 1) * postPerPage,
+        Math.min(postsSelected.length, page * postPerPage)
       )"
       :key="post.id"
       :title="post.title"
@@ -121,7 +121,7 @@
           font-mono
           hover:bg-gray-200/20
         "
-        v-for="index in Math.ceil(postsSelected.length / 5)"
+        v-for="index in Math.ceil(postsSelected.length / postPerPage)"
         :key="index"
         @click="changePage(index)"
         :class="
@@ -153,6 +153,7 @@ export default {
       tagsSelected: [],
       postsSelected: [],
       page: 1,
+      postPerPage: 4,
     };
   },
   methods: {
