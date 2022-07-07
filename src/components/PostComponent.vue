@@ -1,6 +1,6 @@
 <template>
   <div class="w-4/5 sm:w-4/5 md:w-4/5 lg:w-3/5 xl:w-1/2 relative mx-auto py-20">
-    <div class="text-5xl text-white text-center pb-10 px-2 font-mono">
+    <div class="text-5xl text-white text-center pb-10 px-2 font-mono leading-tight">
       {{ title }}
     </div>
     <div class="px-2" v-html="rawHtmlText"></div>
