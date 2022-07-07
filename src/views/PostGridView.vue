@@ -15,7 +15,7 @@
         no-select
       "
     >
-      THINGS I FOUND USEFUL
+      THINGS I FIND USEFUL
     </div>
     <div class="items-center mb-8 text-center no-select">
       <button
