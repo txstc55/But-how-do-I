@@ -40,9 +40,67 @@
   margin-right: auto;
   transform-style: preserve-3d;
   margin-top: 200px;
-  margin-bottom: 200px;
+  margin-bottom: 400px;
   transform-style: preserve-3d;
   animation-direction: alternate;
+}
+</style>
+<p>Ok so why did I want to have the outer wrapper that locates at the center of the div? Well this is because if you actually want to have a mesh viewer, you know that every rotation and translation is performed at the center of the triangle. If you don't move the div, then rotation is directly applied at the center of the div, which is not necessarily the center of the triangle.</p>
+<p>Another thing that I just realised, is that the order of rotation matters. Rotating around X axis then Y axis (of the triangle's local axis) does not produce the same result when you rotate around Y axis then X axis.Here is the demo: </p>
+
+
+<div class="triangle-wrapper" id="tw1">
+  <div class="triangle" id="triangle1"></div>
+</div>
+
+<div class="triangle-wrapper" id="tw2">
+  <div class="triangle" id="triangle2"></div>
+</div>
+
+
+<style>
+#triangle1{
+  border-bottom-color: rgba(0, 100, 230, 0.5)
+}
+
+#triangle2{
+  border-bottom-color: rgba(200, 100, 20, 0.5);
+}
+#tw1{
+  animation: spin1 4s linear infinite;
+}
+
+#tw2{
+  animation: spin2 4s infinite;
+}
+@keyframes spin1 { 
+  0%{
+    -webkit-transform: rotateX(0deg) rotateY(0deg); 
+    transform:rotateX(0deg) rotateY(0deg); 
+  }
+  50%{
+    -webkit-transform: rotateX(45deg) rotateY(0deg); 
+    transform:rotateX(45deg) rotateY(0deg); 
+  }
+  100% { 
+    -webkit-transform: rotateX(45deg) rotateY(45deg); 
+    transform:rotateX(45deg) rotateY(45deg); 
+  } 
+}
+
+@keyframes spin2 { 
+  0%{
+    -webkit-transform: rotateX(0deg) rotateY(0deg); 
+    transform:rotateX(0deg) rotateY(0deg); 
+  }
+  50%{
+    -webkit-transform: rotateZ(0deg) rotateY(45deg) rotateX(0deg); 
+    transform:rotateZ(0deg) rotateY(45deg) rotateX(0deg); 
+  }
+  100% { 
+    -webkit-transform: rotateZ(0deg) rotateY(45deg) rotateX(45deg); 
+    transform:rotateZ(0deg) rotateY(45deg) rotateX(45deg); 
+  } 
 }
 </style>
 </post>
