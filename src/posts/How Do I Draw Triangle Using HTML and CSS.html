@@ -18,8 +18,8 @@
   <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateX</span>(-<span class="hljs-number">125px</span>) <span class="hljs-built_in">translateY</span>(-<span class="hljs-number">166.666667px</span>);
 }</code></pre>
 <p>Result: </p>
-<div class="triangle-wrapper" id="tw1">
-  <div class="triangle" id="triangle1"></div>
+<div class="triangle-wrapper">
+  <div class="triangle"></div>
 </div>
 <style>
 .triangle{
@@ -32,6 +32,17 @@
   position:absolute;
   -webkit-transform: translateX(-125px) translateY(-166.666667px);
   transform: translateX(-125px) translateY(-166.666667px);
+}
+.triangle-wrapper{
+  width: 0px;
+  height: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  transform-style: preserve-3d;
+  margin-top: 500px;
+  margin-bottom: 100px;
+  transform-style: preserve-3d;
+  animation-direction: alternate;
 }
 </style>
 </post>
