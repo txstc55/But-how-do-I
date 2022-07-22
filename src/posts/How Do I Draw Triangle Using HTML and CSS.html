@@ -1,0 +1,37 @@
+<post>
+<p>So I'm thinking, drawing rectangle is quite easy with html, it is literally just the div. But what about drawing triangles? If we can do so, then rendering 3d objects is definitely possible.</p>
+<p>So I did some digging, and it turns out drawing a triangle is quite easy. Here, I will demonstrate how to draw a isosceles triangle(two sides equal) with base of 250px, height of 250px. Here is the code: </p>
+<pre><code class="hljs" style="background:#000000;border-radius:8px"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"triangle-wrapper"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"triangle"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span></code></pre>
+<p>So for css, I actually want to have a wrapper div that is actually at the center of the triangle. Normally, so we have to transform the trangle itself.</p>
+<p>Now let's do some calculation: this triangle has points at (0, 0), (250, 0), (125, 250), so the center should be at (125, 83.333333). But since the inside div always meets the outside div at top left corner, so we move (250 - 125) = 125 px on x axis and (250 - 83.33333) = 166.666667 px on y axis</p>
+<pre><code class="hljs" style="background:#000000;border-radius:8px"><span class="hljs-selector-class">.triangle</span>{
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">border-top</span>:<span class="hljs-number">0px</span>;
+  <span class="hljs-attribute">border-left</span>: <span class="hljs-number">125px</span> solid transparent;
+  <span class="hljs-attribute">border-right</span>: <span class="hljs-number">125px</span> solid transparent;
+  <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">250px</span> solid <span class="hljs-built_in">rgba</span>(<span class="hljs-number">0</span>, <span class="hljs-number">100</span>, <span class="hljs-number">230</span>, <span class="hljs-number">0.5</span>);
+  <span class="hljs-attribute">position</span>:absolute;
+  <span class="hljs-attribute">-webkit-transform</span>: <span class="hljs-built_in">translateX</span>(-<span class="hljs-number">125px</span>) <span class="hljs-built_in">translateY</span>(-<span class="hljs-number">166.666667px</span>);
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateX</span>(-<span class="hljs-number">125px</span>) <span class="hljs-built_in">translateY</span>(-<span class="hljs-number">166.666667px</span>);
+}</code></pre>
+<p>Result: </p>
+<div class="triangle-wrapper" id="tw1">
+  <div class="triangle" id="triangle1"></div>
+</div>
+<style>
+.triangle{
+  width: 0;
+  height: 0;
+  border-top:0px;
+  border-left: 125px solid transparent;
+  border-right: 125px solid transparent;
+  border-bottom: 250px solid rgba(0, 100, 230, 0.5);
+  position:absolute;
+  -webkit-transform: translateX(-125px) translateY(-166.666667px);
+  transform: translateX(-125px) translateY(-166.666667px);
+}
+</style>
+</post>
