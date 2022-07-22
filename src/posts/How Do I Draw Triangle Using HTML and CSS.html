@@ -48,21 +48,17 @@
 <p>Ok so why did I want to have the outer wrapper that locates at the center of the div? Well this is because if you actually want to have a mesh viewer, you know that every rotation and translation is performed at the center of the triangle. If you don't move the div, then rotation is directly applied at the center of the div, which is not necessarily the center of the triangle.</p>
 <p>Another thing that I just realised, is that the order of rotation matters. Rotating around X axis then Y axis (of the triangle's local axis) does not produce the same result when you rotate around Y axis then X axis.Here is the demo: </p>
 
-<div class="main-wrapper">
-  <div class="triangle-wrapper" id="tw1">
-    <div class="triangle" id="triangle1"></div>
-  </div>
+<div class="triangle-wrapper" id="tw1">
+  <div class="triangle" id="triangle1"></div>
+</div>
 
-  <div class="triangle-wrapper" id="tw2">
-    <div class="triangle" id="triangle2"></div>
-  </div>
+<div class="triangle-wrapper" id="tw2">
+  <div class="triangle" id="triangle2"></div>
 </div>
 
 
+
 <style>
-.main-wrapper{
-  width:100vw;
-}
 #triangle1{
   border-bottom-color: rgba(0, 100, 230, 0.5)
 }
@@ -71,12 +67,10 @@
   border-bottom-color: rgba(200, 100, 20, 0.5);
 }
 #tw1{
-  position:relative;
   animation: spin1 4s linear infinite;
 }
 
 #tw2{
-  position:relative;
   animation: spin2 4s infinite;
 }
 @keyframes spin1 { 
